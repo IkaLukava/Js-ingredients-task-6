@@ -1,0 +1,103 @@
+body{
+     background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url(../images/background-1);
+     background-size: cover;
+     background-position: center;
+}
+
+.container{
+    width: 100%;
+    height: 98vh;
+    padding-left: 8%;
+    padding-right: 8%;
+}
+
+.row{
+    display: flex;
+    height: 88%;
+}
+
+.col{
+    flex-basis: 50%;
+}
+
+h1{
+    color: #fff;
+    font-size: 80px;
+}
+
+h2{
+    color: #fff;
+    font-size: 50px;
+}
+/* 
+.order{
+    width: 150px;
+    color: #000;
+    font-size: 18px;
+    padding: 12px 0;
+    background: #fff;
+    border: 0;
+    border-radius: 20px;
+    outline: none;
+    margin-top: 30px;
+} */
+
+.formain{
+    width: 30%;
+    height: 60%;
+    border-radius: 30px;
+    box-shadow:rgba(0, 0, 0, 0.9);
+}
+.formain:hover{
+    width: 33%;
+    height: 62%;
+    transition: 0.5s;
+}
+.card{
+    display:inline-block;
+    width: 200px;
+    height: 230px;
+    border-radius: 10px;
+    padding: 15px 25px;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin: 10px 15px;
+    background-position: center;
+    background-size: cover;
+    transition: transform 0.5s;
+}
+
+.cards{
+    width: 900px;
+    height: 400px;
+}
+
+.card:hover{
+    transform: translateY(-10px);
+}
+
+.card1{
+    background-image: url(/images/card1);
+}
+
+.card2{
+    background-image: url(/images/card2);
+}
+
+.card3{
+    background-image: url(/images/card3);
+}
+
+.card4{
+    background-image: url(/images/formain-1);
+}
+
+.card5{
+    background-image: url(/images/card4);
+}
+
+.card6{
+    background-image: url(/images/card5);
+}
+
+
