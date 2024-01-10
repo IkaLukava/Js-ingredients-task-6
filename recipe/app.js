@@ -1,111 +1,78 @@
-
-//მასივები
-const categories = {
-  "healthy": [
-    {name:"Caesar Salad", photo:""},
-    {name:"Simple Salad", photo:""}, 
-    {name:"Vegetables",photo:""},
-    {name:"soup", photo:""},
-    {name:"bean", photo:""}
-  ],
-
-  "sweets": [
-    {name:"Chocolate Cake", photo:""},
-    {name:"Ice Cream", photo:""},
-    {name:"Candies", photo:""},
-    {name:"snikers", photo:""},
-    {name:"bount", photo:""}
-  ],
-
-  "fast food": [
-    {name:"Hamburger", photo:""},
-    {name:"Fries", photo:""},
-    {name:"Shawarma",photo:""},
-    {name:"hot-dog", photo:""}
-  ],
-
-  "drinks":[
-    {name:"kokakola", photo:""},
-    {name:"fanta", photo:""},
-    {name:"sprite", photo:""},
-    {name:"RcCola", photo:""},
-    {name:"tropic", photo:""}
-  ],
-
-  "mamapapuri":[
-    {name:"xinkali",photo:""},
-    {name:"mwvadi", photo:""},
-    {name:"chaxoxbili", photo:""},
-    {name:"xashi", photo:""},
-    {name:"xachapuri", photo:""}
-  ]
-
+const foods = ["პიცა", "ბურგერი", "სალათა", "შაურმა"];
+const ingredients = {
+    "პიცა": ["მაიონეზი", "კეჩუპი", "ყველი", "პეპერონი"],
+    "ბურგერი": ["ბურგერის პური", "გოჭის ხორცი", "სოუზი", "პომიდორი", "ყველი","სალათის ფურცელი"],
+    "სალათა": ["სალათის ფურცელი", "პომიდორი", "კიტრი", "ხახვი"],
+    "შაურმა":["კიტრი", "პომიდორი", "ხორცი", "მაიონეზი", "კეჩუპი", "სალათის ფურცელი"]
+};
+const photos = {
+    "პიცა": "../images/pizza",
+    "ბურგერი": "../images/burger.jpeg",
+    "სალათა": "../images/salata.jpg",
+    "შაურმა":"../images/shaurma",
 };
 
+function displayIngredients() {
+    const inputElement = document.getElementById("foodInput");
+    const resultElement = document.getElementById("result");
+    const foodName = inputElement.value.trim();
 
+    if (foods.includes(foodName)) {
+        const foodIngredients = ingredients[foodName];
+        const foodPhoto = photos[foodName];
 
-function openCategory() {
-  const categoryInput = document.getElementById("categoryInput").value.toLowerCase().trim();
+        const storedCheckboxState = JSON.parse(localStorage.getItem("checkboxState")) || {};
+        const checkboxState = storedCheckboxState[foodName] || false;
 
-  if (categories.hasOwnProperty(categoryInput)) {
-    displayCategoryDetails(categoryInput);
-  } else {
-    alert("Please choose from the given categories!");
-  }
-}
+        const divContent = `
+            <div id="recept">
+                <h2>${foodName}</h2>
+                <img src="${foodPhoto}" width="200">
+                <ul>
+                    ${foodIngredients.map(ingredient => `<li>${ingredient}</li>`).join('')}
+                </ul> 
+                <input id="heart" type="checkbox" ${checkboxState ? 'checked' : ''} onchange="moveToAnotherPage(this)" />
+                <label for="heart">❤</label>
+            </div>
+        `;
 
-function displayCategoryDetails(category) {
-  const recipeDetailsContent = document.getElementById("recipeDetailsContent");
-  recipeDetailsContent.innerHTML = "";
+        resultElement.innerHTML = divContent;
 
-  const foods = categories[category];
-
-  // Retrieve saved checkbox state from localStorage
-  const categoryOfFoods = JSON.parse(localStorage.getItem(category)) || {};
-
-  foods.forEach(food => {
-    const saveCheckbox = document.createElement("input");
-    saveCheckbox.type = "checkbox";
-    saveCheckbox.id = `${category}-${food.name}-${food.photo}`;
-    saveCheckbox.checked = categoryOfFoods[food.name] || false;
-
-    const foodLabel = document.createElement("label");
-    foodLabel.htmlFor = `${category}-${food.name}`;
-    foodLabel.textContent = food.name;
-
-    const foodDiv = document.createElement("div");
-    foodDiv.appendChild(saveCheckbox);
-    foodDiv.appendChild(foodLabel);
-
-    recipeDetailsContent.appendChild(foodDiv);
-  });
-
-  const recipeDetails = document.querySelector(".recipe-details");
-  recipeDetails.style.display = "block";
-}
-
-function closeDetails() {
-  const recipeDetails = document.querySelector(".recipe-details");
-  recipeDetails.style.display = "none";
-}
-
-
-
-document.addEventListener("change", function (event) {
-  const target = event.target;
-  if (target.type === "checkbox") {
-    const [category, foodName] = target.id.split("-");
-    const categoryOfFoods = JSON.parse(localStorage.getItem(category)) || {};
-    categoryOfFoods[foodName] = target.checked;
-
-    localStorage.setItem(category, JSON.stringify(categoryOfFoods));
-
-    if (target.checked) {
-      const selectedFood = categories[category].find(food => food.name === foodName);
-      if (selectedFood) {
-        window.location.href = `../favorites/index.html?photo=${selectedFood.photo}`;
-      }
+        localStorage.setItem("selectedFood", foodName);
+    } else {
+        resultElement.innerHTML = "<p class='none'>მოცემულ საკვებს ჯერჯერობით ვერ შემოგთავაზებთ.</p>";
     }
-  }
-});
+}
 
+function moveToAnotherPage(checkbox) {
+    const selectedFood = localStorage.getItem("selectedFood");
+
+    // Update checkbox state in localStorage
+    const storedCheckboxState = JSON.parse(localStorage.getItem("checkboxState")) || {};
+    storedCheckboxState[selectedFood] = checkbox.checked;
+    localStorage.setItem("checkboxState", JSON.stringify(storedCheckboxState));
+
+    if (checkbox.checked) {
+        const divContent = document.getElementById("recept").outerHTML;
+
+        // Specify the URL of the destination page
+        const secondPage = '../favorites/index.html';
+
+        const newPage = window.open(secondPage);
+        newPage.document.write(`
+            <html>
+                <head><title>${selectedFood} Recipe</title></head>
+                <body>${divContent}</body>
+            </html>
+        `);
+    }
+}
+
+
+window.onload = function () {
+    const selectedFood = localStorage.getItem("selectedFood");
+    if (selectedFood && foods.includes(selectedFood)) {
+        document.getElementById("foodInput").value = selectedFood;
+        displayIngredients();
+    }
+};

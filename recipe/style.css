@@ -4,9 +4,6 @@ body{
     background-size: cover;
 }
 
-header{
-    margin: 20px;
-}
 
 header .navbar{
     background-color: #212121;
@@ -28,114 +25,90 @@ main  h2{
     color: #fff;
 }
 
-header .navbar form{
+header .navbar{
     display: flex;
     justify-content: center;
 }
 
-form input[type="text"]{
-    flex-grow: 1;
-    margin-right: 10px;
-}
-
-
-form [type="text"], button[type="submit"]{
-    border:none;
-    font-size: 18px;
-    padding: 10px;
-    border-radius: 4px;
-}
-
-form button[type="submit"]{
-    background-color:#f44336 ;
-    color:#fff;
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-}
-
-form button[type="submit"]:hover{
-    background-color: #ff5c5c;
-}
-
-.recipe-container{
-    text-align: center;
-    margin-top: 20px;
-}
-
-/* Main Section */
-
-
-main {
-    display: flex;
-    justify-content: center;
-    /* align-items: center; */
-    height: 100vh;
-    margin-top: 50px;
-}
-li{
-    display:flex;
-}
-
-h1{
+.choose{
     color: #fff;
-    margin: 30px;
+    font-size: 25px;
+    margin: 20px;
 }
 
-label{
-    color: #fff;
-    font-size: 20px;
-    padding: 20px
-}
-
-#categoryInput{
+input{
+    background-color: #9c9494;
     border-radius: 10px;
     border: none;
-    padding: 5px;
-    background-color: #555;
-    color: #fff;
-    font-size: 18px;
+    padding: 2px;
+    font-size: 20px;
 }
 
 button{
-    border-radius: 8px;
-    font-size: 15px;
-    background-color: #e0746c;
-    color: #000;
-    padding: 3px;
+    border-radius: 10px;
+    padding: 2px;
+    border: none;
+    background-color: black;
+    color: #fff;
+    
 }
 
-section {
-    text-align: center;
-}
-
-.recipe-container {
-    margin-bottom: 20px;
-}
-
-.recipe-details {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #000;
-    color: white;
-}
-
-.recipe-details-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+#recept{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
+    margin: 30px;
+    padding: 0px;
+    width:20%;
+    background-color: #ffffff88;
+    border-radius: 10px;
+    padding: 8px;
 }
 
-#selectedPhoto{
-    max-width: 50%;
-    max-height: 50%;
+#recept ul li{
+    list-style: none;
+    padding: 5px;
+    font-size: 18px;
 }
+
+/* checkbox */
+
+[id="heart"] {
+    visibility: hidden;
+  }
+  
+  [for="heart"] {
+    color: #aab8c2;
+    cursor: pointer;
+    font-size: 3em;
+    /* align-self: center;   */
+    /* transition: color 0.2s ease-in-out; */
+  }
+  
+  [for="heart"]:hover {
+    color: grey;
+  }
+  
+  [for="heart"]::selection {
+    color: none;
+    background: transparent;
+  }
+
+  
+  [id="heart"]:checked + label {
+    color: #e2264d;
+  }
+  
+  @keyframes heart {0%, 17.5% {font-size: 0;}}
+  
+  .none{
+    display: flex;
+    font-size: 25px;
+    justify-content: center;
+    margin: 50px;
+    color: #fff;
+  }
+
+
+
+

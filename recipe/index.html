@@ -19,40 +19,19 @@
           <a href="/main.html"><img src="../images/menu-icon" class="logo"></a>
             <nav>
                 <ul>
-                    <li><a href="/main.html">Main</a></li>
-                    <li><a href="../Search/index.html">Search</a></li>
-                    <li><a href="../recipe/index.html">Recipes</a></li>
-                    <li><a href="../favorites/index.html">Favorite</a></li>
+                    <li><a href="/main.html">მთავარი</a></li>
+                    <li><a href="../Search/index.html">მენიუ</a></li>
+                    <li><a href="../recipe/index.html">შეკვეთა და ინგრედიენტები</a></li>
+                    <li><a href="../favorites/index.html">ფავორიტი</a></li>
                 </ul>
             </nav>
-            <!--  <img src="images/menu.png" class="menu-icon"> --->
-        </div>
-
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Recipe Search</title>
-            <link rel="stylesheet" href="style.css">
-        </head>
-        <body>
-            <main>
-                <section>
-                    <div class="recipe-container">
-                        <h1>Search your favorite Food</h1>
-                        <label for="category"><h2>Select a category:</h2><h4><li>"healthy"...</li><li>"fast food"...</li><li>"drinks"...</li><li>"mamapapuri"...</li><li>"sweets"...</li></h4> <br><br></rb></label>
-                        </label>
-                        <input type="text" id="categoryInput" placeholder="write here">
-                        <button type="button" onclick="openCategory()">Search</button>
-                    </div>
-                    <div class="recipe-details">
-                        <button type="button" class="recipe-close-btn" onclick="closeDetails()">
-                            <i class="fa fa-times" aria-hidden="true"></i> Close
-                        </button>
-                        <div class="recipe-details-content" id="recipeDetailsContent"></div>
-                    </div>
-                </section>
+        </div> 
+        <label class="choose" for="foodInput">ჩაწერეთ სასურველი საკვები:</label>
+        <input type="text" id="foodInput">
+        <button onclick="displayIngredients()">შეკვეთა</button>
+    
+        <div id="result">
+    
         <script src="/recipe/app.js"></script>
         <!-- <script src="/recipe/image.js"></script> -->
 </body>

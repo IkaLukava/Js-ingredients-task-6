@@ -10,101 +10,23 @@ body{
     padding-left: 8%;
     padding-right: 8%;
 }
-
-.container2{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+h2{
+  color: #000;
 }
 
-#title{
-    width: 300px;
-    height: 40px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    border: none;
-    font-size: 20px;
-    padding: 10px;
-}
-#text,
-#text2{
-    width: 400px;
-    height: 50px;
-    margin-top: 20px;
-    border: none;
-    border-radius: 10px;
-    padding: 10px;
-    font-size: 20px;
+.foods{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 100px;
+  padding: 20px;
+  text-align: center;
 }
 
-.btn{
-    margin: 10px;
-    width: 70px;
-    font-size: 10px;
+.foods img{
+  margin: 40px;
+  width: 250px;
+  border-radius: 20px;
 }
 
-#container3{
-    margin-top: 10px;
-    width: 100%;
-    border-radius: 5px;
 
-}
-
-#container4{
-    margin-top: 10px;
-    width: 100%;
-    border-radius: 5px;
-}
-
-#container5{
-    margin-top: 10px;
-    width: 100%;
-    border-radius: 5px;
-}
-
-.search{
-    margin-top: 100px;
-}
-/* ----------HEART CHECKBOX----------- */
-input{
-    /* display: none; */
- }
- 
- .heart{
-   display: flex;
-   justify-content: end;
- }
- 
- .heart{
-   /* position: absolute; */
-   left: -100vw;
- }
- 
- [for="heart"] {
-   color: #aab8c2;
-   cursor: pointer;
-   font-size: 2em;
-   align-self: center;  
-   transition: color 0.2s ease-in-out;
- }
- 
- [for="heart"]:hover {
-   color: grey;
- }
- 
- [for="heart"]::selection {
-   color: none;
-   background: transparent;
- }
- 
- [for="heart"]::moz-selection {
-   color: none;
-   background: transparent;
- }
- 
- .heart:checked + label {
-   color: #e2264d;
-   will-change: font-size;
-   /* animation: heart2 1s cubic-bezier(.17, .89, .32, 1.49); */
- }
- @keyframes heart {0%, 17.5% {font-size: 0;}}
