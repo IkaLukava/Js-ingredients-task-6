@@ -26,11 +26,14 @@
                 </ul>
             </nav>
         </div> 
+        <div class="container2">
         <label class="choose" for="foodInput">ჩაწერეთ სასურველი საკვები:</label>
-        <input type="text" id="foodInput">
+        <input type="text" id="foodInput" oninput="displaySuggestions()">
         <button onclick="displayIngredients()">შეკვეთა</button>
     
         <div id="result">
+            
+        </div>
     
         <script src="/recipe/app.js"></script>
         <!-- <script src="/recipe/image.js"></script> -->

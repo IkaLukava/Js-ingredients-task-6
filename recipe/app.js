@@ -12,15 +12,49 @@ const photos = {
     "შაურმა":"../images/shaurma",
 };
 
+
+    function displaySuggestions() {
+        const inputElement = document.getElementById("foodInput");
+        const resultElement = document.getElementById("result");
+        const foodPrefix = inputElement.value.trim().toLowerCase();
+
+        if (foodPrefix.length === 0) {
+            resultElement.style.display = 'none';
+        return;
+        }
+
+        const matchingFoods = foods.filter(food => food.toLowerCase().startsWith(foodPrefix));
+
+        if (matchingFoods.length > 0) {
+            const suggestions = matchingFoods.map(food => `
+                <div class="suggestion" onclick="displayIngredients('${food}')">${food}</div>
+            `).join('');
+
+            resultElement.innerHTML = suggestions;
+            resultElement.style.display = 'block';
+        } else {
+            resultElement.innerHTML = "<p>ვერ მოიძებნა...</p>";
+            resultElement.style.display = 'block';
+        }
+    }
+
+
+
 function displayIngredients() {
     const inputElement = document.getElementById("foodInput");
     const resultElement = document.getElementById("result");
-    const foodName = inputElement.value.trim();
+    const foodPrefix = inputElement.value.trim().toLowerCase(); 
 
-    if (foods.includes(foodName)) {
+    
+    const matchingFoods = foods.filter(food => food.toLowerCase().startsWith(foodPrefix));
+
+    if (matchingFoods.length > 0) {
+
+        const foodName = matchingFoods[0];
         const foodIngredients = ingredients[foodName];
         const foodPhoto = photos[foodName];
 
+        // Retrieve checkbox state from localStorage
         const storedCheckboxState = JSON.parse(localStorage.getItem("checkboxState")) || {};
         const checkboxState = storedCheckboxState[foodName] || false;
 
@@ -37,6 +71,7 @@ function displayIngredients() {
         `;
 
         resultElement.innerHTML = divContent;
+        // resultElement.style.display = 'none';
 
         localStorage.setItem("selectedFood", foodName);
     } else {
@@ -47,7 +82,6 @@ function displayIngredients() {
 function moveToAnotherPage(checkbox) {
     const selectedFood = localStorage.getItem("selectedFood");
 
-    // Update checkbox state in localStorage
     const storedCheckboxState = JSON.parse(localStorage.getItem("checkboxState")) || {};
     storedCheckboxState[selectedFood] = checkbox.checked;
     localStorage.setItem("checkboxState", JSON.stringify(storedCheckboxState));
@@ -55,24 +89,19 @@ function moveToAnotherPage(checkbox) {
     if (checkbox.checked) {
         const divContent = document.getElementById("recept").outerHTML;
 
-        // Specify the URL of the destination page
+
         const secondPage = '../favorites/index.html';
 
-        const newPage = window.open(secondPage);
-        newPage.document.write(`
-            <html>
-                <head><title>${selectedFood} Recipe</title></head>
-                <body>${divContent}</body>
-            </html>
-        `);
+    
+        window.location.href = `${secondPage}?divContent=${encodeURIComponent(divContent)}&selectedFood=${encodeURIComponent(selectedFood)}`;
     }
 }
 
-
 window.onload = function () {
-    const selectedFood = localStorage.getItem("selectedFood");
-    if (selectedFood && foods.includes(selectedFood)) {
-        document.getElementById("foodInput").value = selectedFood;
-        displayIngredients();
+    const secondone = new URLSearchParams(window.location.search);
+    const divContent = secondone.get('divContent');
+
+    if (divContent) {
+        document.getElementById("destinationDiv").innerHTML = divContent;
     }
 };
