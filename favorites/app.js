@@ -42,7 +42,7 @@ function getQueryStringParams() {
     const params = {};
 
     queryString.split('&').forEach(param => {
-        const [key, value] = param.split('=');
+        const [key, value] = param.split("=");
         params[key] = decodeURIComponent(value);
     });
 
