@@ -49,11 +49,13 @@ input{
 }
 
 button{
-    border-radius: 10px;
+    border-radius: 20px;
     border: none;
+    font-size: 13px;
     background-color: black;
     color: #fff;
-    padding: 5px;
+    padding: 11px;
+    margin: 20px;
     
 }
 
@@ -117,4 +119,11 @@ button{
   color: #fff;
   cursor: pointer;
 }
+
+#selectedItemsContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
 

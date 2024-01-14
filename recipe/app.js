@@ -40,44 +40,48 @@ const photos = {
 
 
 
-function displayIngredients() {
-    const inputElement = document.getElementById("foodInput");
-    const resultElement = document.getElementById("result");
-    const foodPrefix = inputElement.value.trim().toLowerCase(); 
-
+    function displayIngredients() {
+        const inputElement = document.getElementById("foodInput");
+        const resultElement = document.getElementById("result");
+        const selectedItemsContainer = document.getElementById("selectedItemsContainer"); // Add this line
     
-    const matchingFoods = foods.filter(food => food.toLowerCase().startsWith(foodPrefix));
+        const foodPrefix = inputElement.value.trim().toLowerCase();
+    
+        const matchingFoods = foods.filter(food => food.toLowerCase().startsWith(foodPrefix));
+    
+        if (matchingFoods.length > 0) {
+    
+            const foodName = matchingFoods[0];
+            const foodIngredients = ingredients[foodName];
+            const foodPhoto = photos[foodName];
+    
+            // Retrieve checkbox state from localStorage
+            const storedCheckboxState = JSON.parse(localStorage.getItem("checkboxState")) || {};
+            const checkboxState = storedCheckboxState[foodName] || false;
+    
+            const divContent = `
+                <div id="recept">
+                    <h2>${foodName}</h2>
+                    <img src="${foodPhoto}" width="200">
+                    <ul>
+                        ${foodIngredients.map(ingredient => `<li>${ingredient}</li>`).join('')}
+                    </ul> 
+                    <input id="heart" type="checkbox" ${checkboxState ? 'checked' : ''} onchange="moveToAnotherPage(this)" />
+                    <label for="heart">❤</label>
+                </div>
+            `;
 
-    if (matchingFoods.length > 0) {
-
-        const foodName = matchingFoods[0];
-        const foodIngredients = ingredients[foodName];
-        const foodPhoto = photos[foodName];
-
-        // Retrieve checkbox state from localStorage
-        const storedCheckboxState = JSON.parse(localStorage.getItem("checkboxState")) || {};
-        const checkboxState = storedCheckboxState[foodName] || false;
-
-        const divContent = `
-            <div id="recept">
-                <h2>${foodName}</h2>
-                <img src="${foodPhoto}" width="200">
-                <ul>
-                    ${foodIngredients.map(ingredient => `<li>${ingredient}</li>`).join('')}
-                </ul> 
-                <input id="heart" type="checkbox" ${checkboxState ? 'checked' : ''} onchange="moveToAnotherPage(this)" />
-                <label for="heart">❤</label>
-            </div>
-        `;
-
-        resultElement.innerHTML = divContent;
-        // resultElement.style.display = 'none';
+        selectedItemsContainer.innerHTML += divContent;
+        // resultElement.innerHTML += divContent;
+        resultElement.style.display = 'none';
 
         localStorage.setItem("selectedFood", foodName);
     } else {
         resultElement.innerHTML = "<p class='none'>მოცემულ საკვებს ჯერჯერობით ვერ შემოგთავაზებთ.</p>";
     }
 }
+
+
 
 function moveToAnotherPage(checkbox) {
     const selectedFood = localStorage.getItem("selectedFood");
@@ -89,19 +93,22 @@ function moveToAnotherPage(checkbox) {
     if (checkbox.checked) {
         const divContent = document.getElementById("recept").outerHTML;
 
+        if (window.location.pathname.includes("favorites")) {
+            // Remove div from the screen on the favorite page
+            const receptDiv = document.getElementById("recept");
+            if (receptDiv) {
+                receptDiv.remove();
+            }
 
+            // Remove div from local storage on the favorite page
+            const storedDivContent = localStorage.getItem("divContent");
+            if (storedDivContent) {
+                localStorage.removeItem("divContent");
+            }
+        }
+
+        // Redirect to the second page
         const secondPage = '../favorites/index.html';
-
-    
         window.location.href = `${secondPage}?divContent=${encodeURIComponent(divContent)}&selectedFood=${encodeURIComponent(selectedFood)}`;
     }
 }
-
-window.onload = function () {
-    const secondone = new URLSearchParams(window.location.search);
-    const divContent = secondone.get('divContent');
-
-    if (divContent) {
-        document.getElementById("destinationDiv").innerHTML = divContent;
-    }
-};
