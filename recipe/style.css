@@ -74,15 +74,18 @@ button{
     list-style: none;
     padding: 5px;
     font-size: 18px;
+    text-align: center;
+    transform: translateX(-15px);
+    
 }
 
 /* checkbox */
 
-[id="heart"] {
+.heart {
     visibility: hidden;
   }
   
-  [for="heart"] {
+ .heart1{
     color: #aab8c2;
     cursor: pointer;
     font-size: 3em;
@@ -90,17 +93,17 @@ button{
     /* transition: color 0.2s ease-in-out; */
   }
   
-  [for="heart"]:hover {
+  .heart1:hover {
     color: grey;
   }
   
-  [for="heart"]::selection {
+  .heart1::selection {
     color: none;
     background: transparent;
   }
 
   
-  [id="heart"]:checked + label {
+  .heart:checked + label {
     color: #e2264d;
   }
   
@@ -125,5 +128,13 @@ button{
   flex-wrap: wrap;
 }
 
+#recept {
+  position: relative;
+}
 
+.checkbox-container {
+  position: absolute;
+  bottom: -23px;
+  left: 60;
+  }
 
