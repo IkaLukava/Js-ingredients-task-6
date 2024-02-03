@@ -9,7 +9,7 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
       crossorigin="anonymous"
     >
-    <link rel="stylesheet" href="/shareforstyle/allstyle.css">
+    <link rel="stylesheet" href="../share/allstyle.css">
     <link rel="stylesheet" href="../recipe/style.css">
 </head>
 
@@ -20,7 +20,7 @@
             <nav>
                 <ul>
                     <li><a href="/index.html">მთავარი</a></li>
-                    <li><a href="../Search/index.html">მენიუ</a></li>
+                    <li><a href="../menu/index.html">მენიუ</a></li>
                     <li><a href="../recipe/index.html">შეკვეთა და ინგრედიენტები</a></li>
                     <li><a href="../favorites/index.html">ფავორიტი</a></li>
                 </ul> 
@@ -29,7 +29,8 @@
         <div class="container2">
         <label class="choose" for="foodInput">ჩაწერეთ სასურველი საკვები:</label>
         <input type="text" id="foodInput" >
-        <button onclick="displayIngredients()">ძებნა</button>
+        <button id="searchButton">ძებნა</button>
+
         <div id="selectedItemsContainer"></div>
         
     

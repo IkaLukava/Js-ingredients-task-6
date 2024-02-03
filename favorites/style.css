@@ -63,3 +63,11 @@ left: 100;
 }
 
 @keyframes heart {0%, 17.5% {font-size: 0;}}
+
+
+.img{
+  width: 250px;
+  height: 200px;
+  padding: 15px;
+  border-radius: 30px;
+}

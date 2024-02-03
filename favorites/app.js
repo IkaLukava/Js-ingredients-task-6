@@ -9,7 +9,7 @@ const displaySelectedItems = () => {
 
         div.innerHTML = `
             <h2>${item.name}</h2>
-            <img src="${item.photo}" width="200">
+            <img src="${item.photo}" class="img" width="200">
             <ul>${item.ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')}</ul>
             <div class="checkbox-container">
                 <input type="checkbox" class="heart" id="heart"-${item.name}" data-food-name="${item.name}" onchange="handleCheckboxChange('${item.name}')"/>
