@@ -6,17 +6,19 @@
   width:20%;
   background-color: #ffffff88;
   border-radius: 10px;
-  padding: 35px;
+  padding: 35px;  
 }
 
 
 
 
 #recept ul li{
+
   list-style: none;
   padding: 8px;
   font-size: 18px;
   text-align: center;
+  transform: translateX(-15px);
 }
 
 #selectedItemsContainer {
@@ -46,6 +48,7 @@ left: 100;
   cursor: pointer;
   font-size: 3em;
   padding: 20PX;
+  transform: translateX(-15px);
   /* align-self: center;   */
   /* transition: color 0.2s ease-in-out; */
 }
@@ -72,4 +75,8 @@ left: 100;
   height: 200px;
   padding: 15px;
   border-radius: 30px;
+}
+
+.none{
+  color:#fff;
 }

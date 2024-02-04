@@ -46,20 +46,20 @@ const moveToFavoritePage = (foodName) => {
     }
 
     const selectedItems = JSON.parse(localStorage.getItem("selectedItems")) || [];
-    selectedItems.push({ name: foodName, ingredients: ingredients[foodName], photo: photos[foodName] });
+    const existingIndex = selectedItems.findIndex(item => item.name === foodName);
+
+    if (existingIndex !== -1) {
+        selectedItems.splice(existingIndex, 1);
+    } else {
+        selectedItems.push({ name: foodName, ingredients: ingredients[foodName], photo: photos[foodName] });
+    }
+
     localStorage.setItem("selectedItems", JSON.stringify(selectedItems));
 }
 
+
 const displayAllIngredients = () => {
     const selectedItemsContainer = document.getElementById("selectedItemsContainer");
-
-    // Check if the input has a value
-    const inputElement = document.getElementById("foodInput");
-    if (!inputElement.value.trim()) {
-        selectedItemsContainer.innerHTML = '';
-        return;
-    }
-
     selectedItemsContainer.innerHTML = '';
 
     for (const foodName of foods) {
@@ -84,32 +84,32 @@ const displayAllIngredients = () => {
     }
 };
 
-const searchIngredients = () => {
-    // Call the displayAllIngredients function when the search button is clicked
-    displayAllIngredients();
-};
-
+displayAllIngredients();
 
 const filterIngredients = () => {
     const inputElement = document.getElementById("foodInput");
     const selectedItemsContainer = document.getElementById("selectedItemsContainer");
 
     const foodSubstring = inputElement.value.trim().toLowerCase();
-    const matchingFoods = foods.filter(food => food.toLowerCase().includes(foodSubstring));
+    
+    selectedItemsContainer.innerHTML = '';
 
-    // Check if the input is empty or no matching foods
-    if (!foodSubstring || matchingFoods.length === 0) {
+    if (!foodSubstring) {
+        displayAllIngredients();
         return;
     }
 
-    for (const foodName of matchingFoods) {
+    const matchingFood = foods.find(food => food.toLowerCase() === foodSubstring);
+
+    if (matchingFood) {
+        const foodName = matchingFood;
         const foodIngredients = ingredients[foodName];
         const foodPhoto = photos[foodName];
 
         const divContent = `
             <div id="recept">
                 <h2 class="nickname">${foodName}</h2>
-                <img src="${foodPhoto}" class="img" >
+                <img src="${foodPhoto}" class="img">
                 <ul>
                     ${foodIngredients.map(ingredient => `<li>${ingredient}</li>`).join('')}
                 </ul> 
@@ -121,15 +121,10 @@ const filterIngredients = () => {
         `;
 
         selectedItemsContainer.innerHTML += divContent;
+    } else {
+        selectedItemsContainer.innerHTML = '<p class="none">ასეთი საკვები ჩვენთან არ აღინიშნება</p>';
     }
 };
 
 const searchButton = document.getElementById("searchButton");
 searchButton.addEventListener('click', filterIngredients);
-
-// Remove the input event listener for real-time updates
-// const inputElement = document.getElementById("foodInput");
-// inputElement.addEventListener('input', filterIngredients);
-
-// Initialize the display when the page loads
-displayAllIngredients();
