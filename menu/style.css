@@ -10,6 +10,7 @@ body{
     padding-left: 8%;
     padding-right: 8%;
 }
+
 h2{
   color: #000;
 }
@@ -30,6 +31,22 @@ h2{
   margin-top: 20px;
 }
 
+.foods2{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 100px;
+  padding: 20px;
+  text-align: center;
+  margin-top: -100px;
+}
+
+.foods2 img{
+  margin: 40px;
+  width: 250px;
+  border-radius: 20px;
+  margin-top: 20px;
+}
 
 #recept {
   display: inline-block;
