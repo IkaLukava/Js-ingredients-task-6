@@ -100,4 +100,27 @@ h2{
     background-image: url(/images/card5);
 }
 
+@media(max-width:952px){
+    .logo{
+        display: none;
+    }
 
+    .row{
+        height: 50%;
+    }
+
+    .col h1{
+        font-size: 40px;
+
+    }
+
+    .col h2{
+        font-size: 20px;
+    }
+
+    .card{
+        width: 100px;
+        height: 150px;
+    }
+
+}
