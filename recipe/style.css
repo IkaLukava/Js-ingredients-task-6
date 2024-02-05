@@ -108,6 +108,7 @@ button{
   .heart:checked + label {
     color: #e2264d;
   }
+
   
   @keyframes heart {0%, 17.5% {font-size: 0;}}
   
@@ -155,9 +156,6 @@ button{
 }
 
 @media(max-width:1400px){
-  #recept{
-    /* width: 15%;   */
-  }
   #recept img{
     width: 150px;
     height: 120px;
@@ -173,5 +171,6 @@ button{
   }
 }
 
-@media(max-width:994px){
-}
+
+
+

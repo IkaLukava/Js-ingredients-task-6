@@ -128,3 +128,9 @@ const filterIngredients = () => {
 
 const searchButton = document.getElementById("searchButton");
 searchButton.addEventListener('click', filterIngredients);
+
+
+// icon function
+function myFunction(x) {
+    x.classList.toggle("change");
+  }

@@ -65,6 +65,7 @@ h2{
     background-position: center;
     background-size: cover;
     transition: transform 0.5s;
+    z-index: 1;
 }
 
 .cards{
@@ -77,27 +78,27 @@ h2{
 }
 
 .card1{
-    background-image: url(/images/card1);
+    background-image: url(../images/card1);
 }
 
 .card2{
-    background-image: url(/images/card2);
+    background-image: url(../images/card2);
 }
 
 .card3{
-    background-image: url(/images/card3);
+    background-image: url(../images/card3);
 }
 
 .card4{
-    background-image: url(/images/formain-1);
+    background-image: url(../images/formain-1);
 }
 
 .card5{
-    background-image: url(/images/card4);
+    background-image: url(../images/card4);
 }
 
 .card6{
-    background-image: url(/images/card5);
+    background-image: url(../images/card5);
 }
 
 @media(max-width:997px){
@@ -111,7 +112,6 @@ h2{
 
     .col h1{
         font-size: 40px;
-        margin-top: 220px;
 
     }
 
