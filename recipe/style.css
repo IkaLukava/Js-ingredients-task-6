@@ -136,8 +136,10 @@ button{
 
 .checkbox-container {
   position: absolute;
-  bottom: -23px;
-  left: 60;
+  width: 100px;
+  height: 100px;
+  bottom: 0px;
+  left: 85px;
   }
 
 .img{
@@ -152,3 +154,24 @@ button{
   
 }
 
+@media(max-width:1400px){
+  #recept{
+    /* width: 15%;   */
+  }
+  #recept img{
+    width: 150px;
+    height: 120px;
+  }
+  .checkbox-container{
+    left:60px;
+  }
+}
+
+@media(max-width:1200px){
+  .checkbox-container{
+    left:50px;
+  }
+}
+
+@media(max-width:994px){
+}
