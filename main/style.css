@@ -103,7 +103,7 @@ h2{
 
 @media(max-width:997px){
     .logo{
-        display: none;
+        display:block;
     }
 
     .row{
