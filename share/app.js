@@ -1,5 +1,6 @@
 
 // icon function
-const  myFunction = (x)=> {
+const changeMenuButton = (x)=> {
   x.classList.toggle("change");
 };
+
