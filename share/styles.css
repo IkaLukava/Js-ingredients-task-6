@@ -86,7 +86,7 @@ a.active,a:hover{
         background: #2c3e50;
         top: -10px;
         left: -100%;
-        text-align: center;
+        /* text-align: center; */
         transition: all .5s;
         z-index: 9;
     }

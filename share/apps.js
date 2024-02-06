@@ -1,5 +1,5 @@
 
 // icon function
-function myFunction(x) {
+const  myFunction = (x)=> {
     x.classList.toggle("change");
   }
