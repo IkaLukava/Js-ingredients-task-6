@@ -300,18 +300,18 @@ nav ul li{
 }
 }
 
-@media(max-width:401px){
+@media(max-width:595px){
 
   .foods h2{
     font-size: 15px; 
     color: #fff;
-    margin-right: -180px;
+    margin-right: -150px;
   }
 
 
   .foods2 h2{
     font-size: 15px; 
     color: #fff;
-    margin-right: -180px;
+    margin-right: -150px;
   }
 }
