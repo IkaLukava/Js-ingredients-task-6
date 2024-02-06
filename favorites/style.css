@@ -1,6 +1,15 @@
 body{
   background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url(../images/background-1);
   background-size:cover ;
+  background-position: center;
+
+}
+
+.brain{
+  width: 100%;
+  height: 98vh;
+  padding-left: 20%;
+  padding-right: 8%;
 }
 
 #recept{
@@ -40,7 +49,7 @@ position: relative;
 .checkbox-container {
 position: absolute;
 bottom: -23px;
-left: 100;
+left: 120;
 }
 
 [id="heart"] {
@@ -52,7 +61,7 @@ left: 100;
   color: #e2264d;
   cursor: pointer;
   font-size: 3em;
-  padding: 20PX;
+  padding: 20px;
   transform: translateX(-15px);
   /* align-self: center;   */
   /* transition: color 0.2s ease-in-out; */
@@ -85,3 +94,85 @@ left: 100;
 .none{
   color:#fff;
 }
+
+@media(max-width:1669px){
+  #recept .img{
+   width: 200px;
+   height: 150px;
+  }
+
+  #recept .checkbox-container{
+   left: 100px;
+   font-size: 0.9rem;
+  }
+}
+
+@media(max-width:1400px){
+  #recept .img{
+    width: 150px;
+    height: 120px;
+  }
+  #recept .checkbox-container{
+    left:80px;
+  }
+
+  #recept ul li{
+    font-size: 15px;
+  }
+}
+
+@media(max-width:1200px){  
+  #recept .checkbox-container{
+    left:60px;
+    font-size: 0.7rem;
+    bottom: -15px;
+  }
+
+  #recept .img{
+    width: 130px;
+    height: 100px;
+  }
+
+  #recept ul li{
+    font-size: 10px;
+  }
+
+  #recept h2{
+    font-size: 20px;
+  }
+}
+
+@media(max-width:993px){
+  #recept{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
+    margin: 30px;
+    padding: 5px;
+  }
+
+  .nickname{
+    font-size: 20px;
+  }
+
+  #recept img{
+    width: 200px;
+    height: 150px;
+  } 
+
+  #recept .checkbox-container{
+    position: relative;
+    font-size: 0.7rem;
+    bottom: 30px;
+    padding: 0px;
+    left: 15px;
+  }
+
+  #recept ul li{
+    font-size: 16px;
+  }
+
+}
+
+

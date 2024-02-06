@@ -110,7 +110,7 @@ const filterIngredients = () => {
             <div id="recept">
                 <h2 class="nickname">${foodName}</h2>
                 <img src="${foodPhoto}" class="img">
-                <ul>
+                <ul class="solo">
                     ${foodIngredients.map(ingredient => `<li>${ingredient}</li>`).join('')}
                 </ul> 
                 <div class="checkbox-container">
