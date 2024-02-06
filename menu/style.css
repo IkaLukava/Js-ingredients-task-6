@@ -92,7 +92,7 @@ h2{
   }
 }
 
-@media(max-width:997px){
+@media(max-width:993px){
   .row{
       height: 50%;
   }
@@ -122,6 +122,14 @@ h2{
   .foods2{
     display: block;
   }
+
+  .foods img{
+    width: 430px;
+  }
+
+  .foods2 img{
+    width: 430px;
+  }
 }
 
 
@@ -139,14 +147,14 @@ h2{
 
 
   .foods img{
-    width: 130px;
+    width: 350px;
   }
   .foods h2{
     font-size: 15px;
   }
 
   .foods2 img{
-    width: 130px;
+    width: 350px;
   }
 
   .foods2 h2{
@@ -165,7 +173,7 @@ nav ul li{
 @media(max-width:800px){
 
   .foods img{
-    width: 100px;
+    width: 350px;
     margin: 20px;
   }
 
@@ -174,7 +182,7 @@ nav ul li{
   }
 
   .foods2 img{
-    width: 100px;
+    width: 350px;
     margin: 20px;
   }
 
@@ -191,33 +199,33 @@ nav ul li{
 }
 }
 
-@media(max-width:570px){
+@media(max-width:721px){
   .header ul li{
     padding: 10px;
   }
 
   .foods img{
-    width: 70px;
-    border-radius: 5px;
+    width: 300px;
+    border-radius: 10px;
     margin: 15px;
   }
 
   .foods h2{
-    font-size: 10px;
+    font-size: 20px;
   }
 
   .foods2 img{
-    width: 70px;
+    width: 300px;
     margin: 20px;
-    border-radius: 5px;
+    border-radius: 10px;
   }
 
   .foods2 h2{
-    font-size: 10px;
+    font-size: 20px;
   }
 
 .menu h2{
-    font-size: 10px;
+    font-size: 20px;
 }
 
 nav ul li{
@@ -225,36 +233,69 @@ nav ul li{
 }
 }
 
-@media(max-width:427px){
+@media(max-width:645px){
   .header ul li{
     padding: 6px;
   }
   
   .foods img{
-    width: 50px;
-    border-radius: 5px;
-    margin: 15px;
+    width: 300px;
+    border-radius: 10px;
+    /* margin: 15px; */
   }
 
   .foods h2{
-    font-size: 8px;
+    font-size: 15px; 
+    color: #fff;
+    margin-left: -30px;
   }
 
   .foods2 img{
-    width: 50px;
-    margin: 15px;
-    border-radius: 5px;
+    width: 300px;
+    /* margin: 15px; */
+    border-radius: 10px;
   }
 
   .foods2 h2{
-    font-size: 8px;
+    font-size: 15px; 
+    color: #fff;
+    margin-left: -30px;
   }
 
 .menu h2{
-    font-size: 10px;
+    font-size: 15px;
 }
 
 nav ul li{
     padding: 3px;
+}
+}
+
+@media(max-width:400px){
+  .foods img{
+    width: 260px;
+    border-radius: 10px;
+
+  }
+
+  .foods h2{
+    font-size: 15px; 
+    color: #fff;
+    margin-right: -130px;
+  }
+
+  .foods2 img{
+    width: 260px;
+    border-radius: 10px;
+  }
+
+  .foods2 h2{
+    font-size: 15px; 
+    color: #fff;
+    margin-right: -130px;
+  }
+
+  .menu h2{
+    font-size: 15px;
 }
 }
