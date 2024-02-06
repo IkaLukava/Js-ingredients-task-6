@@ -251,7 +251,16 @@ button{
 
   nav ul li{
     line-height: 80px;
-}
+  }
+
+  #foodInput{
+    padding: 2px;
+    font-size: 15px;
+  }
+
+  #searchButton{
+    padding: 5px;
+  }
 }
 
 
