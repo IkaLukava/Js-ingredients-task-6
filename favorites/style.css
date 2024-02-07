@@ -24,11 +24,7 @@ body{
   padding: 35px;  
 }
 
-
-
-
 #recept ul li{
-
   list-style: none;
   padding: 8px;
   font-size: 18px;
@@ -41,8 +37,6 @@ body{
   flex-wrap: wrap;
 }
 
-
-
 #recept {
 position: relative;
 }
@@ -50,7 +44,7 @@ position: relative;
 .checkbox-container {
 position: absolute;
 bottom: -23px;
-left: 120;
+left: 120px;
 }
 
 [id="heart"] {

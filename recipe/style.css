@@ -1,77 +1,77 @@
 body{
-    background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url(../images/background-3);
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
+  background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url(../images/background-3);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .brain{
-  width: 100%;
-  height: 98vh;
-  padding-left: 20%;
-  padding-right: 8%;
+width: 100%;
+height: 98vh;
+padding-left: 20%;
+padding-right: 8%;
 }
 
 
 header .navbar{
-    background-color: #212121;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1;
+  background-color: #212121;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
 }
 
 header .navbar h1{
-    color: #fff;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 main  h2{
-    color: #fff;
+  color: #fff;
 }
 
 header .navbar{
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .choose{
-    color: #fff;
-    font-size: 25px;
-    margin: 20px;
+  color: #fff;
+  font-size: 25px;
+  margin: 20px;
 }
 
 input{
-    background-color: #9c9494;
-    border-radius: 20px;
-    border: none;
-    padding: 5px;
-    font-size: 20px;
+  background-color: #9c9494;
+  border-radius: 20px;
+  border: none;
+  padding: 5px;
+  font-size: 20px;
 }
 
 button{
-    border-radius: 20px;
-    border: none;
-    font-size: 13px;
-    background-color: black;
-    color: #fff;
-    padding: 11px;
-    margin: 20px;
-    
+  border-radius: 20px;
+  border: none;
+  font-size: 13px;
+  background-color: black;
+  color: #fff;
+  padding: 11px;
+  margin: 20px;
+  
 }
 
 #recept{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 30px;
-    width: 20%;
-    background-color: #ffffff88;
-    border-radius: 10px;
-    padding: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px;
+  width: 20%;
+  background-color: #ffffff88;
+  border-radius: 10px;
+  padding: 35px;
 }
 
 
@@ -79,235 +79,248 @@ button{
 
 
 #recept ul li{
-    list-style: none;
-    padding: 8px;
-    font-size: 18px;
-    text-align: center;
-    transform: translateX(-15px);
-    
+  list-style: none;
+  padding: 8px;
+  font-size: 18px;
+  text-align: center;
+  transform: translateX(-15px);
+  
 }
 
 /* checkbox */
 
-  .heart {
-    visibility: hidden;
-  }
-  
- .heart1{
+.heart {
+  visibility: hidden;
+}
+
+.heart1{
+display: flex;
+color: #aab8c2;
+cursor: pointer;
+font-size: 3em;
+padding: 20px;
+}
+
+.heart1:hover {
+  color: grey;
+}
+
+.heart1::selection {
+  color: none;
+  background: transparent;
+}
+
+
+.heart:checked + label {
+  color: #e2264d;
+}
+
+
+@keyframes heart {0%, 17.5% {font-size: 0;}}
+
+.none{
   display: flex;
-  color: #aab8c2;
-  cursor: pointer;
-  font-size: 3em;
-  padding: 20px;
-  }
-  
-  .heart1:hover {
-    color: grey;
-  }
-  
-  .heart1::selection {
-    color: none;
-    background: transparent;
-  }
-
-  
-  .heart:checked + label {
-    color: #e2264d;
-  }
-
-  
-  @keyframes heart {0%, 17.5% {font-size: 0;}}
-  
-  .none{
-    display: flex;
-    font-size: 25px;
-    justify-content: center;
-    margin: 50px;
-    color: #fff;
-  }
+  font-size: 25px;
+  justify-content: center;
+  margin: 50px;
+  color: #fff;
+}
 
 
 #result{
-  color: #fff;
-  cursor: pointer;
+color: #fff;
+cursor: pointer;
 }
 
 #selectedItemsContainer {
-  display: flex;
-  flex-wrap: wrap;
-  margin-right: 100px;
+display: flex;
+flex-wrap: wrap;
+margin-right: 100px;
 }
 
 #recept {
-  position: relative;
+position: relative;
 }
 
 #recept .checkbox-container {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  bottom: 15px;
-  left: 85px;
-  font-size: 1rem;
-  }
+position: absolute;
+width: 100px;
+height: 100px;
+bottom: 15px;
+left: 95px;
+font-size: 1rem;
+}
 
 #recept .img{
-  width: 250px;
-  height: 200px;
-  padding: 15px;
-  border-radius: 30px;
+width: 250px;
+height: 200px;
+padding: 15px;
+border-radius: 30px;
 }
 
 .nickname{
-  font-size: 25px;
-  
+font-size: 25px;
+
 }
 
 @media(max-width:1669px){
-  #recept .img{
-   width: 200px;
-   height: 150px;
-  }
+#recept .img{
+ width: 200px;
+ height: 150px;
+}
 
-  #recept .checkbox-container{
-   left: 100px;
-   font-size: 0.9rem;
-  }
+#recept .checkbox-container{
+ left: 100px;
+ font-size: 0.9rem;
+}
 }
 
 @media(max-width:1400px){
-  #recept .img{
-    width: 150px;
-    height: 120px;
-  }
-  #recept .checkbox-container{
-    left:80px;
-  }
+#recept .img{
+  width: 150px;
+  height: 120px;
+}
+#recept .checkbox-container{
+  left:80px;
+}
 
-  #recept ul li{
-    font-size: 15px;
-  }
+#recept ul li{
+  font-size: 15px;
+}
 }
 
 @media(max-width:1200px){  
-  #recept .checkbox-container{
-    left:60px;
-    font-size: 0.7rem;
-    bottom: -15px;
-  }
+#recept .checkbox-container{
+  left:60px;
+  font-size: 0.7rem;
+  bottom: -15px;
+}
 
-  #recept .img{
-    width: 130px;
-    height: 100px;
-  }
+#recept .img{
+  width: 130px;
+  height: 100px;
+}
 
-  #recept ul li{
-    font-size: 10px;
-  }
+#recept ul li{
+  font-size: 10px;
+}
 
-  #recept h2{
-    font-size: 20px;
-  }
+#recept h2{
+  font-size: 20px;
+}
 }
 
 @media(max-width:993px){
-  #recept{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 250px;
-    margin: 30px;
-    padding: 5px;
-  }
+  .heart {
+    display: none;
+}
 
-  .nickname{
-    font-size: 20px;
-  }
+.heart1 {
+    cursor: pointer;
+    color: grey; /* Set the default color to grey */
+}
 
-  #recept img{
-    width: 200px;
-    height: 150px;
-  } 
+.heart:checked + .heart1 {
+    color: red;
+}
 
-  #recept .checkbox-container{
-    position: relative;
-    font-size: 0.7rem;
-    bottom: 30px;
-    padding: 0px;
-    left: 15px;
-  }
+#recept{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+  margin: 30px;
+  padding: 5px;
+}
 
-  #recept ul li{
-    font-size: 16px;
-  }
+.nickname{
+  font-size: 20px;
+}
 
-  #selectedItemsContainer {
-    display: block;
-    margin-left: -30px;
-  }
+#recept img{
+  width: 200px;
+  height: 150px;
+} 
 
-  #foodInput{
-    width: 180px;
-    padding: 5px;
-    font-size: 15px;
-  }
+#recept .checkbox-container{
+  position: relative;
+  font-size: 0.7rem;
+  bottom: 30px;
+  padding: 0px;
+  left: 15px;
+}
 
-  #searchButton{
-    font-size: 10px;
-    padding: 9px;
-    margin: 5px;
-  }
+#recept ul li{
+  font-size: 16px;
+}
 
-  .checkbtn{
-    margin-right: -20px;
-  }
+#selectedItemsContainer {
+  display: block;
+  margin-left: -30px;
+}
+
+#foodInput{
+  width: 180px;
+  padding: 5px;
+  font-size: 15px;
+}
+
+#searchButton{
+  font-size: 10px;
+  padding: 9px;
+  margin: 5px;
+}
+
+.checkbtn{
+  margin-right: -20px;
+}
 }
 
 @media(max-width:500px){
-  .header{
-      margin-left: -30px;
-      margin-top: 20px;
-  }
+.header{
+    margin-left: -30px;
+    margin-top: 20px;
+}
 
-  .checkbtn{
-      margin-right: -20px;
-      margin-top: 20px;
-  }
+.checkbtn{
+    margin-right: -20px;
+    margin-top: 20px;
+}
 
-  #foodInput{
-    margin-right: 10px;
-    padding: 5px 5px 5px 10px;
-    font-size: 16px;
-  }
+#foodInput{
+  margin-right: 10px;
+  padding: 5px 5px 5px 10px;
+  font-size: 16px;
+}
 
-  .choose{
-    font-size: 15px;
-  }
+.choose{
+  font-size: 15px;
+}
 }
 
 @media(max-width:365px){
-  #selectedItemsContainer {
-    display: block;
-    margin-left: -30px;
-  }
+#selectedItemsContainer {
+  display: block;
+  margin-left: -30px;
+}
 
-  #recept{
-    width: 200px;
-  }
+#recept{
+  width: 200px;
+}
 
-  .choose{
-    font-size: 13px;
-  }
+.choose{
+  font-size: 13px;
+}
 
-  #foodInput{
-    width: 140px;
-    padding: 2px 2px 2px 10px;
-    font-size: 15px;
-  }
+#foodInput{
+  width: 140px;
+  padding: 2px 2px 2px 10px;
+  font-size: 15px;
+}
 
-  #searchButton{
-    font-size: 10px;
-    padding: 5px;
-    margin: 0px;
-  }
+#searchButton{
+  font-size: 10px;
+  padding: 5px;
+  margin: 0px;
+}
 }

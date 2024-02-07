@@ -128,5 +128,3 @@ const filterIngredients = () => {
 
 const searchButton = document.getElementById("searchButton");
 searchButton.addEventListener('click', filterIngredients);
-
-
