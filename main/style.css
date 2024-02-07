@@ -151,14 +151,11 @@ h2{
     nav ul li{
         line-height: 80px;
     }
-   
-}
 
-@media(max-width:365px){
     .header{
         margin-left: -30px;
     }
-
+    
     .checkbtn{
         margin-right: -20px;
     }
