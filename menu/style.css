@@ -275,6 +275,29 @@ nav ul li{
 }
 }
 
+@media(max-width:595px){
+  .foods{
+    margin-left: 70px;
+  }
+
+  .foods2{
+    margin-left: 70px;
+  }
+
+  .foods h2{
+    font-size: 15px; 
+    color: #fff;
+    margin-right: -100px;
+  }
+
+
+  .foods2 h2{
+    font-size: 15px; 
+    color: #fff;
+    margin-right: -100px;
+  }
+}
+
 @media(max-width:400px){
   .foods img{
     width: 260px;
@@ -304,26 +327,12 @@ nav ul li{
 }
 }
 
-@media(max-width:595px){
-
-  .foods{
-    margin-left: 70px;
+@media(max-width:365px){
+  .header{
+      margin-left: -30px;
   }
 
-  .foods2{
-    margin-left: 70px;
-  }
-
-  .foods h2{
-    font-size: 15px; 
-    color: #fff;
-    margin-right: -100px;
-  }
-
-
-  .foods2 h2{
-    font-size: 15px; 
-    color: #fff;
-    margin-right: -100px;
+  .checkbtn{
+      margin-right: -20px;
   }
 }

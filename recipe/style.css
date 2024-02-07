@@ -290,4 +290,8 @@ button{
     margin: 5px;
   }
 
+  .header{
+    margin-left: -30px;
+  }
+
 }
