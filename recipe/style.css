@@ -76,6 +76,8 @@ button{
 
 
 
+
+
 #recept ul li{
     list-style: none;
     padding: 8px;
@@ -277,6 +279,10 @@ button{
     padding: 5px 5px 5px 10px;
     font-size: 16px;
   }
+
+  .choose{
+    font-size: 15px;
+  }
 }
 
 @media(max-width:365px){
@@ -290,7 +296,7 @@ button{
   }
 
   .choose{
-    font-size: 18px;
+    font-size: 13px;
   }
 
   #foodInput{
