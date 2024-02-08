@@ -1,9 +1,0 @@
-ჩანდეს ყველა პროდუქტი.
-როცა რაღაც პროდუქტს ძებნი ამოაგდოს მხოლოდ ის,სხვები არა.
-შეკვეთა და ინგრედიენტებშიც ჩანდეს არის თუარა საკვები ფავორიტებში და დაჭერის შემთხვევაში წაიშალოს ფავორიტებიდან.
-
-
-<div class="checkbox-container">
-                    <input type="checkbox" class="heart" id="heart-${foodName}" data-food-name="${foodName}" onchange="moveToFavoritePage('${foodName}')"/>
-                    <label class="heart1" for="heart-${foodName}">❤</label>
-                </div>

@@ -256,21 +256,10 @@ font-size: 25px;
   margin: 5px;
 }
 
-.checkbtn{
-  margin-right: -20px;
-}
+
 }
 
 @media(max-width:500px){
-.header{
-    margin-left: -30px;
-    margin-top: 20px;
-}
-
-.checkbtn{
-    margin-right: -20px;
-    margin-top: 20px;
-}
 
 #foodInput{
   margin-right: 10px;
@@ -281,6 +270,12 @@ font-size: 25px;
 .choose{
   font-size: 15px;
 }
+
+.header{
+  margin-left: -0px;
+  margin-top: 20px;
+}
+
 }
 
 @media(max-width:365px){
