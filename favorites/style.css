@@ -41,10 +41,12 @@ body{
 position: relative;
 }
 
-.checkbox-container {
-position: absolute;
-bottom: -23px;
-left: 120px;
+#selectedItemsContainer .icon-container {
+  display: flex;
+  position: absolute;
+  bottom: 15px;
+  left: 130px;
+  font-size: 1rem;
 }
 
 .heart {
@@ -112,6 +114,11 @@ left: 120px;
 }
 
 @media(max-width:993px){
+  #selectedItemsContainer .icon-container {
+    position:relative;
+    left: 0px;
+  }
+  
   #recept{
     display: flex;
     flex-direction: column;

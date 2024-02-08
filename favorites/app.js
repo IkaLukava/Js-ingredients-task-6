@@ -20,6 +20,8 @@ const displaySelectedItems = () => {
     });
 }
 
+
+
 const handleCheckboxChange = (itemName) => {
     const selectedItemsContainer = document.getElementById("selectedItemsContainer");
 

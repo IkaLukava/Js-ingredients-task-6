@@ -24,6 +24,21 @@ const photos = {
     "ხინკალი":"../images/ხინკალი"
 };
 
+const initializeFavorites = () => {
+    const storedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    storedFavorites.forEach(foodName => {
+        const icon = document.querySelector(`.heart[data-food-name="${foodName}"]`);
+        if (icon) {
+            icon.classList.add('red', 'fas');
+            icon.classList.remove('far');
+        }
+    });
+}
+
+window.addEventListener('load', () => {
+    initializeFavorites();
+});
+
 const moveToFavoritePage = (foodName) => {
     const storedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
     const isFavorite = storedFavorites.includes(foodName);
@@ -52,7 +67,6 @@ const moveToFavoritePage = (foodName) => {
 
     localStorage.setItem("favorites", JSON.stringify(storedFavorites));
 }
-
 
 const displayAllIngredients = () => {
     const selectedItemsContainer = document.getElementById("selectedItemsContainer");
