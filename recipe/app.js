@@ -24,37 +24,33 @@ const photos = {
     "ხინკალი":"../images/ხინკალი"
 };
 
-
 const moveToFavoritePage = (foodName) => {
     const storedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
-
     const isFavorite = storedFavorites.includes(foodName);
+    const icon = document.querySelector(`.heart[data-food-name="${foodName}"]`);
 
     if (isFavorite) {
         const index = storedFavorites.indexOf(foodName);
         storedFavorites.splice(index, 1);
+        icon.classList.remove('red', 'fas');
+        icon.classList.add('far');
+
+        // Remove the item from the selected items list
+        const selectedItems = JSON.parse(localStorage.getItem("selectedItems")) || [];
+        const updatedItems = selectedItems.filter(item => item.name !== foodName);
+        localStorage.setItem("selectedItems", JSON.stringify(updatedItems));
     } else {
         storedFavorites.push(foodName);
-    }
+        icon.classList.add('red', 'fas');
+        icon.classList.remove('far');
 
-    const checkbox = document.querySelector(`.heart[data-food-name="${foodName}"]`);
-
-    if (isFavorite) {
-        checkbox.style.color = '';
-    } else {
-        checkbox.style.color = 'red';
-    }
-
-    const selectedItems = JSON.parse(localStorage.getItem("selectedItems")) || [];
-    const existingIndex = selectedItems.findIndex(item => item.name === foodName);
-
-    if (existingIndex !== -1) {
-        selectedItems.splice(existingIndex, 1);
-    } else {
+        // Add the item to the selected items list
+        const selectedItems = JSON.parse(localStorage.getItem("selectedItems")) || [];
         selectedItems.push({ name: foodName, ingredients: ingredients[foodName], photo: photos[foodName] });
+        localStorage.setItem("selectedItems", JSON.stringify(selectedItems));
     }
 
-    localStorage.setItem("selectedItems", JSON.stringify(selectedItems));
+    localStorage.setItem("favorites", JSON.stringify(storedFavorites));
 }
 
 
@@ -73,9 +69,8 @@ const displayAllIngredients = () => {
                 <ul>
                     ${foodIngredients.map(ingredient => `<li>${ingredient}</li>`).join('')}
                 </ul> 
-                <div class="checkbox-container">
-                    <input type="checkbox" class="heart" id="heart-${foodName}" data-food-name="${foodName}" onchange="moveToFavoritePage('${foodName}')"/>
-                    <label class="heart1" for="heart-${foodName}">❤</label>
+                <div class="icon-container">
+                    <i class="heart far fa-heart" data-food-name="${foodName}" onclick="moveToFavoritePage('${foodName}')"></i>
                 </div>
             </div>
         `;
@@ -113,16 +108,15 @@ const filterIngredients = () => {
                 <ul class="solo">
                     ${foodIngredients.map(ingredient => `<li>${ingredient}</li>`).join('')}
                 </ul> 
-                <div class="checkbox-container">
-                    <input type="checkbox" class="heart" id="heart-${foodName}" data-food-name="${foodName}" onchange="moveToFavoritePage('${foodName}')"/>
-                    <label class="heart1" for="heart-${foodName}">❤</label>
+                <div class="icon-container">
+                    <i class="heart far fa-heart" data-food-name="${foodName}" onclick="moveToFavoritePage('${foodName}')"></i>
                 </div>
             </div>
         `;
 
         selectedItemsContainer.innerHTML += divContent;
     } else {
-        selectedItemsContainer.innerHTML = '<p class="none">ასეთი საკვები ჩვენთან არ აღინიშნება</p>';
+        selectedItemsContainer.innerHTML = '<p class="none">ჩვენთან ამ საკვებს ვერ შეიძენთ! </p>';
     }
 };
 

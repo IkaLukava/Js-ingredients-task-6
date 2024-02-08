@@ -47,37 +47,11 @@ bottom: -23px;
 left: 120px;
 }
 
-[id="heart"] {
-  visibility: hidden;
+.heart {
+  font-size: 27px; 
+  color: #f00; 
+  cursor: pointer; 
 }
-
-[for="heart"] {
-  display: flex;
-  color: #e2264d;
-  cursor: pointer;
-  font-size: 3em;
-  padding: 20px;
-  transform: translateX(-15px);
-  /* align-self: center;   */
-  /* transition: color 0.2s ease-in-out; */
-}
-
-[for="heart"]:hover {
-  color: #e2264d;
-}
-
-[for="heart"]::selection {
-  color: none;
-  background: transparent;
-}
-
-
-[id="heart"]:checked + label {
-  color: #e2264d;
-}
-
-@keyframes heart {0%, 17.5% {font-size: 0;}}
-
 
 .img{
   width: 250px;

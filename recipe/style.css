@@ -76,7 +76,24 @@ button{
 
 
 
+#selectedItemsContainer .icon-container {
+  display: flex;
+  position: absolute;
+  bottom: 15px;
+  left: 105px;
+  font-size: 1rem;
+}
 
+.heart {
+  font-size: 27px; 
+  color: #333; 
+  cursor: pointer; 
+  margin: 0 10px; 
+}
+
+.heart.red {
+  color: #f00; 
+}
 
 #recept ul li{
   list-style: none;
@@ -87,33 +104,7 @@ button{
   
 }
 
-/* checkbox */
 
-.heart {
-  visibility: hidden;
-}
-
-.heart1{
-display: flex;
-color: #aab8c2;
-cursor: pointer;
-font-size: 3em;
-padding: 20px;
-}
-
-.heart1:hover {
-  color: grey;
-}
-
-.heart1::selection {
-  color: none;
-  background: transparent;
-}
-
-
-.heart:checked + label {
-  color: #e2264d;
-}
 
 
 @keyframes heart {0%, 17.5% {font-size: 0;}}
@@ -211,18 +202,11 @@ font-size: 25px;
 }
 
 @media(max-width:993px){
-  .heart {
-    display: none;
-}
 
-.heart1 {
-    cursor: pointer;
-    color: grey; /* Set the default color to grey */
-}
-
-.heart:checked + .heart1 {
-    color: red;
-}
+  #selectedItemsContainer .icon-container {
+    position:relative;
+    left: 0px;
+  }
 
 #recept{
   display: flex;
@@ -324,3 +308,4 @@ font-size: 25px;
   margin: 0px;
 }
 }
+
