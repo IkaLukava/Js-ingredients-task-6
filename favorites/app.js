@@ -18,9 +18,7 @@ const displaySelectedItems = () => {
 
         selectedItemsContainer.appendChild(div);
     });
-}
-
-
+};
 
 const handleCheckboxChange = (itemName) => {
     const selectedItemsContainer = document.getElementById("selectedItemsContainer");
@@ -33,7 +31,7 @@ const handleCheckboxChange = (itemName) => {
     const selectedItems = JSON.parse(localStorage.getItem("selectedItems")) || [];
     const updatedItems = selectedItems.filter(item => item.name !== itemName);
     localStorage.setItem("selectedItems", JSON.stringify(updatedItems));
-}
+};
 
 window.addEventListener('load', () => {
     displaySelectedItems();
